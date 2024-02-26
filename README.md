@@ -28,3 +28,18 @@ about the current recursive call.
 Describe your reasoning and the conclusion you've come to. Your reasoning is the
 most important part. You do not need to prove that the invariant is correct. Add
 your answer to this markdown file.
+
+
+## SOl
+
+Invariant: 
+At each iteration of the loop including the first, fibArray contains the Fibonacci numbers for all indices from 0 to i.
+
+At the beginning of each iteration of the loop, the fibArray is updated to include the Fibonacci numbers for indices 0 through i.
+
+The base cases (input 0 and 1) ensure that the initial elements of fibArray are correctly set.
+
+Induction step:
+
+In each iteration where i is greater than 1, the Fibonacci number for index i is computed as the sum of the Fibonacci numbers at indices i - 1 and i - 2.
+once the loop has finished, fibArray contains the Fibonacci numbers for all indices up to n, satisfying the invariant.
