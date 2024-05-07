@@ -30,16 +30,33 @@ most important part. You do not need to prove that the invariant is correct. Add
 your answer to this markdown file.
 
 
-## SOl
+## Solution
 
-Invariant: 
-At each iteration of the loop including the first, fibArray contains the Fibonacci numbers for all indices from 0 to i.
+**Invariant**:
+Let fib(n) be the function that computes the nth Fibonacci number. The invariant can be stated as: For all $n > 1$, if fib(n-1) and fib(n-2) are correct, then fib(n) is also computed correctly.
+Mathematically, this can be expressed as:
+$$
+\forall n > 1, \text{ if } fib(n-1) = F(n-1) \text{ and } fib(n-2) = F(n-2), \text{ then } fib(n) = F(n)
+\text{ where } F(n) \text{ is the true Fibonacci number at index } n.
+$$
+we can say that the invariant is true at the start of each recursive call because we are starting with the first two Fibonacci numbers, 0 and 1, which are correct by the base cases.
 
-At the beginning of each iteration of the loop, the fibArray is updated to include the Fibonacci numbers for indices 0 through i.
+**The Base Cases**:
 
-The base cases (input 0 and 1) ensure that the initial elements of fibArray are correctly set.
+The base cases (input 0 and 1) ensure that the initial elements of fibArray are correctly set. This is because $fib(0) = 0$ and $fib(1) = 1$, which are the always first two Fibonacci numbers and can be assumed to be correct.
 
-Induction step:
+**Induction step**:
+In each iteration where $n > 1$, the Fibonacci number for index $n$ is computed as the sum of the Fibonacci numbers at fib(n-1) and fib(n-2).
+once the loop has finished, fibArray contains the Fibonacci numbers for all indices up to $n$, satisfying the invariant.
 
-In each iteration where i is greater than 1, the Fibonacci number for index i is computed as the sum of the Fibonacci numbers at indices i - 1 and i - 2.
-once the loop has finished, fibArray contains the Fibonacci numbers for all indices up to n, satisfying the invariant.
+For each recursive call where $n > 1$, fib(n) is computed as the sum of fib(n-1) and fib(n-2).
+This computation relies on the correctness of the results for fib(n-1) and fib(n-2), which are assumed correct given the invariant.
+Therfore, each step builds upon the previously established correct values, ensuring that fibArray is accurately updated to include the Fibonacci numbers for all indices up to $n$ by the end of the recursion. This satisfies the invariant and maintains the correctness of the sequence throughout the computation.
+
+## References
+
+My Notes from the lectures and videos.
+Furthermore, I use Github copilot to assist in writing code, It's built into my vscode install I use for Proffesional work and It's helpful in accelerating projects and avoiding syntax issues. I will make this clarification on other assignments as well.
+
+I used the following resource to format the math expression for the invariant:
+https://www.upyesp.org/posts/makrdown-vscode-math-notation/
