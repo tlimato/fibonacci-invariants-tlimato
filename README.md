@@ -33,7 +33,7 @@ your answer to this markdown file.
 ## Solution
 
 **Invariant**:
-Let fib(n) be the function that computes the nth Fibonacci number. The invariant can be stated as: For all $n > 1$, if fib(n-1) and fib(n-2) are correct, then fib(n) is also computed correctly.
+Let fib(n) be the function that computes the nth Fibonacci number. The invariant can be stated as follows: For all $n > 1$, if fib(n-1) and fib(n-2) are correct, then fib(n) is also computed correctly.
 Mathematically, this can be expressed as:
 $$
 \forall n > 1, \text{ if } fib(n-1) = F(n-1) \text{ and } fib(n-2) = F(n-2), \text{ then } fib(n) = F(n)
@@ -43,14 +43,15 @@ we can say that the invariant is true at the start of each recursive call becaus
 
 **The Base Cases**:
 
-The base cases (input 0 and 1) ensure that the initial elements of fibArray are correctly set. This is because $fib(0) = 0$ and $fib(1) = 1$, which are the always first two Fibonacci numbers and can be assumed to be correct.
+The base cases (input 0 and 1) ensure that the initial elements of fibArray are correctly set. This is because $fib(0) = 0$ and $fib(1) = 1$, which are always the first two Fibonacci numbers and can be assumed to be correct.
 
 **Induction step**:
 In each iteration where $n > 1$, the Fibonacci number for index $n$ is computed as the sum of the Fibonacci numbers at fib(n-1) and fib(n-2).
 once the loop has finished, fibArray contains the Fibonacci numbers for all indices up to $n$, satisfying the invariant.
 
-For each recursive call where $n > 1$, fib(n) is computed as the sum of fib(n-1) and fib(n-2).
-This computation relies on the correctness of the results for fib(n-1) and fib(n-2), which are assumed correct given the invariant.
+For each recursive call where $n > 1$, fib(n) is computed as the sum of fib(n-1) and fib(n-2) because that's how the Fibonacci sequence is defined.
+
+This result relies on the correctness of the results for fib(n-1) and fib(n-2), which are assumed to be correct given the invariant.
 Therfore, each step builds upon the previously established correct values, ensuring that fibArray is accurately updated to include the Fibonacci numbers for all indices up to $n$ by the end of the recursion. This satisfies the invariant and maintains the correctness of the sequence throughout the computation.
 
 ## References
