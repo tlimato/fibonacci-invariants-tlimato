@@ -49,7 +49,7 @@ when n = 2, the fibArray is [0, 1] as these are the base cases prior to recursio
 This is the first value the fib() function calculates and the invariant is true at this iteration, as the fibArray is [0, 1] which are the previous Fibonacci numbers up to $n-1$, and the nth iteration calculated [$n=2$] is calculated using $fib(n)=fib(n-1)+fib(n-2)$, which translates $fib(2) = 1 + 0 = 1$ which is the correct Fibonacci value. This value is then pushed to the fibArray [<- IMPORTANT CLARIFICATION]
 Given $n+1$ would be the next value to be calculated, the invariant is still true as the fibArray still contains all of the Fibonacci numbers up to $n-1$. Therefore, the invariant is still true throughout recursion.
 
-It's only after recursion is concluded that we no longer have to worry about the invariant as we have the final result of the fibArray and can just return it knowing it contains all of the Fibonacci numbers up to the final Fibonacci value $n-1$ and $n$ which was calculated after the last recursive call.
+It's only after we have finished recursion is concluded that we no longer have to worry about the invariant as we have the final result of the fibArray and can just return it knowing it contains all of the Fibonacci numbers up to the final Fibonacci value $n-1$ and $n$ which was calculated during the last recursive call.
 
 ## References
 
